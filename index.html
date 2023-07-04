@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>GRIF</title>
+    <meta name="description" content="GRIF">
+    <link rel="canonical" href="https://people.eecs.berkeley.edu/~vmyers/grif">
+
+    <meta property="og:title" content="Goal Representations for Instruction Following">
+    <meta property="og:image" content="frontfig.png">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:description" content="A Semi-Supervised Language Interface to Control">
+    <meta property="og:url" content="">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="text-center pt-4 pb-2">
+        <h1><b>Goal Representations for Instruction Following</b></h1>
+    </div>
+    <div class="text-center pb-4">
+        <h2>A Semi-Supervised Language Interface to Control</h2>
+    </div>
+    <div class="container text-center pb-2">
+        <div class="row">
+            <div class="col author-block">
+                <a href="https://people.eecs.berkeley.edu/~vmyers/" target="_blank" class="custom-link">
+                    <img src="vivek.jpg" alt="Author Name" class="author-image">
+                    <p>Vivek Myers*</p>
+                </a>
+            </div>
+            <div class="col author-block">
+                <a target="_blank" class="custom-link disabled">
+                    <img src="andre.jpeg" alt="Author Name" class="author-image">
+                    <p>Andre He*</p>
+                </a>
+            </div>
+            <div class="col author-block">
+                <a href="https://kuanfang.github.io" target="_blank" class="custom-link">
+                    <img src="kuan.jpg" alt="Author Name" class="author-image">
+                    <p>Kuan Fang</p>
+                </a>
+            </div>
+            <div class="col author-block">
+                <a href="https://homerwalke.com" target="_blank" class="custom-link">
+                    <img src="homer.png" alt="Author Name" class="author-image">
+                    <p>Homer Walke</p>
+                </a>
+            </div>
+            <div class="col author-block">
+                <a target="_blank" class="custom-link disabled">
+                    <img src="philippe.jpeg" alt="Author Name" class="author-image">
+                    <p>Philippe Hansen-Estruch</p>
+                </a>
+            </div>
+            <div class="col author-block">
+                <a href="https://www.chinganc.com" target="_blank" class="custom-link">
+                    <img src="chingan.jpg" alt="Author Name" class="author-image">
+                    <p>Ching-An Cheng </p>
+                </a>
+            </div>
+            <div class="col author-block">
+                <a href="https://mihaij.com" target="_blank" class="custom-link">
+                    <img src="mihai.jpg" alt="Author Name" class="author-image">
+                    <p>Mihai Jalobeanu</p>
+                </a>
+            </div>
+            <div class="col author-block">
+                <a href="https://www.microsoft.com/en-us/research/people/akolobov/" target="_blank" class="custom-link">
+                    <img src="andrey.jpg" alt="Author Name" class="author-image">
+                    <p>Andrey Kolobov</p>
+                </a>
+            </div>
+            <div class="col author-block">
+                <a href="http://people.eecs.berkeley.edu/~anca/" target="_blank" class="custom-link">
+                    <img src="anca.jpg" alt="Author Name" class="author-image">
+                    <p>Anca Dragan</p>
+                </a>
+            </div>
+            <div class="col author-block">
+                <a href="https://people.eecs.berkeley.edu/~svlevine/" target="_blank" class="custom-link">
+                    <img src="sergey.jpg" alt="Author Name" class="author-image">
+                    <p>Sergey Levine</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container pb-4">
+        <div class="row text-center">
+            <div class="col">
+                <a href="paper.pdf" target="_blank" class="mx-2 px-2">
+                    <i class="fas fa-file-pdf" alt="paper logo"></i> Paper
+                </a>
+                <a href="https://anonymous.4open.science/r/jaxrl_minimal-CCBF" target="_blank" class="mx-2 px-2">
+                    <i class="fas fa-code" alt="code logo"></i> Code
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="abstract">
+            <p>
+                <b>Abstract:</b> Our goal is for robots to follow natural language instructions like "put the towel next to
+                the microwave." But getting large amounts of labeled data, i.e. data that contains demonstrations of tasks
+                labeled with the language instruction, is prohibitive. In contrast, obtaining policies that respond to image
+                goals is much easier, because any autonomous trial or demonstration can be labeled in hindsight with its
+                final state as the goal. In this work, we contribute a method that taps into joint image- and goal-
+                conditioned policies with language using only a small amount of language data. Prior work has made progress
+                on this using vision-language models or by jointly training language-goal-conditioned policies, but so far
+                neither method has scaled effectively to real-world robot tasks without significant human annotation. Our
+                method achieves robust performance in the real world by learning an embedding from the labeled data that
+                aligns language not to the goal image, but rather to the desired change between the start and goal images
+                that the instruction corresponds to. We then train a policy on this embedding: the policy benefits from all
+                the unlabeled data, but the aligned embedding provides an <i>interface</i> for language to steer the policy.
+                We
+                show instruction following across a variety of manipulation tasks in different scenes, with generalization
+                to language instructions outside of the labeled data.
+            </p>
+        </div>
+    </div>
+
+    <div>
+        <hr>
+    </div>
+    <div>
+        <div class="container row py-2">
+            <div class="col-8">
+                <img class="mw-100" src="front.png" alt="summary"></img>
+            </div>
+            <div class="col-4 px-4 d-flex my-auto">
+                <p><b>GRIF</b> learns manipulation skills conditioned on either language or image goal task representations. By aligning equivalent tasks, our approach is able to learn to follow instructions from a small labeled dataset of trajectories and a much larger unlabeled or autonomously collected dataset.</p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <hr>
+    </div>
+    <div>
+        <video class="video" controls="controls" preload="metadata">
+            <source src="https://people.eecs.berkeley.edu/~vmyers/GRIF.mp4#t=0.1" type="video/mp4">
+            Paper summary.
+        </video>
+    </div>
+
+    <div>
+        <hr>
+    </div>
+    <div>
+        <div class="container demos pb-4">
+            <div class="row">
+                <div class="col">
+                    <img src="traj1.gif" alt="demo 1"></img>
+                    <img src="lang1.png" alt="lang 1"></img>
+                </div>
+                <div class="col">
+                    <img src="traj2.gif" alt="demo 2"></img>
+                    <img src="lang2.png" alt="lang 2"></img>
+                </div>
+                <div class="col">
+                    <img src="traj3.gif" alt="demo 3"></img>
+                    <img src="lang3.png" alt="lang 3"></img>
+                </div>
+                <div class="col">
+                    <img src="traj4.gif" alt="demo 4"></img>
+                    <img src="lang4.png" alt="lang 4"></img>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <img src="traj5.gif" alt="demo 5"></img>
+                    <img src="lang5.png" alt="lang 5"></img>
+                </div>
+                <div class="col">
+                    <img src="traj6.gif" alt="demo 6"></img>
+                    <img src="lang6.png" alt="lang 6"></img>
+                </div>
+                <div class="col">
+                    <img src="traj7.gif" alt="demo 7"></img>
+                    <img src="lang7.png" alt="lang 7"></img>
+                </div>
+                <div class="col">
+                    <img src="traj8.gif" alt="demo 8"></img>
+                    <img src="lang8.png" alt="lang 8"></img>
+                </div>
+            </div>
+        </div>
+        <div class="caption">
+            <p>
+            <b>GRIF</b> is a language-conditioned policy that can follow a variety of instructions in different scenes. It can robustly ground new instructions into scenes with just a small amount of language-annotated training data.
+            </p>
+        </div>
+    </div>
+
+    <div>
+        <hr>
+    </div>
+    <div>
+        <div class="stages d-flex">
+            <div class="flex-grow-1 mx-3">
+                <img class="pb-3" src="stages1.png" alt="stages 1"></img>
+                <div class="px-1">
+                    <p><b>Left:</b> We learn goal- and language-conditioned task representations from the labeled dataset and explicitly align them using contrastive learning.</p>
+                </div>
+            </div>
+            <div class="flex-grow-1 mx-3">
+                <img class="pb-3" src="stages2.png" alt="stages 2"></img>
+                <div class="px-1">
+                    <p><b>Right:</b> Conditioned on aligned task representations, the policy is trained on both labeled and unlabeled datasets.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <hr>
+    </div>
+    <div>
+        <img class="mw-100 py-3" src="scene.png" alt="method comparison"></img>
+        <div class="caption">
+        <p><b>GRIF</b> outperforms past work on many language-conditioned tasks. The improvement is most significant in a new scene (A) where many courses of action are possible, and it is particularly important to ground the instruction to the correct goal.</p>
+        </div>
+    </div>
+
+    <div>
+        <hr>
+    </div>
+    <div>
+        <div class="container row">
+            <div class="col-7">
+                <img class="mw-100 py-3" src="ablations.png" alt="ablations"></img>
+            </div>
+            <div class="col-5 py-4">
+                Our method benefits from:
+                <ul>
+                    <li>Training on unlabeled data</li>
+                    <li>Explicit alignment of visual and language task specifications</li>
+                    <li>Prior knowledge from pre-trained VLMs</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <hr>
+    </div>
+    <div class="mb-5">
+        <div class="container row">
+            <div class="col-5 py-4">
+                <p><b>GRIF</b>'s language-conditioned task representations show strong generalization to new instructions and scenes. We find that the representations of unseen instructions are closely aligned with images of the correct task, and this alignment holds across a variety of backgrounds and object combinations.</p>
+            </div>
+            <div class="col-7">
+                <img class="mw-100" src="representations.png" alt="ablations"></img>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

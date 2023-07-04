@@ -1,0 +1,174 @@
+<html lang="en"><head><base target="_blank">
+
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Paper Showcase</title>
+<script>
+parent.document.getElementsByTagName('iframe')[0].scrolling="no";
+</script>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Include FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+body {
+    font-size: 17px;
+    color: #333333;
+    letter-spacing: 0.015em;
+    font-family: "Palatino Linotype";
+}
+
+li {
+    font-size: 17px;
+}
+
+.small-caps {
+    font-variant: small-caps;
+}
+
+.author-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+
+.author-block {
+    margin: 0px 0px 0px 0px;
+    /* You can adjust this value */
+}
+
+.image-container {
+    max-height: 400px;
+    /* You can adjust this value */
+    overflow: hidden;
+}
+
+.image-constrained {
+    max-height: 100%;
+}
+
+.video-container {
+    position: relative;
+    max-height: 400px;
+    width: 100%;
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
+    overflow: hidden;
+}
+
+.video-fluid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    color: #2c8df5;
+    text-decoration: none;
+}
+
+.custom-link {
+    color: #333333;
+}
+
+a:hover {
+    color: #FF9B00;
+}
+
+.custom-container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 100px;
+    /* Increase this value to create larger left margin */
+    padding-right: 100px;
+    /* Increase this value to create larger right margin */
+}
+
+.definition-box {
+    background-color: #f0f0f0;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.definition-box>p {
+    margin: 0;
+}
+
+.definition-box>span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.definition-box i {
+    margin-right: 10px;
+    color: #ffbb00;
+    /* Optional: Change the color of the icon */
+}
+
+.image-panel {
+    position: relative;
+    width: 160px;
+    /* Set the width of the image panels */
+    height: 120px;
+    /* Set the height of the image panels */
+}
+
+.img-fluid {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /* This makes the image cover the entire container while maintaining the aspect ratio */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-text {
+    color: white;
+    font-size: 20px;
+}
+
+.image-panel:hover .overlay {
+    opacity: 1;
+}
+</style>
+</head>
+
+<body>
+        <div class="row text-center">
+            <div class="col">
+                <a href="paper.pdf" target="_blank" class="mx-2">
+                    <i class="fas fa-file-pdf"></i> Paper
+                </a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://anonymous.4open.science/r/jaxrl_minimal-CCBF" target="_blank" class="mx-2">
+                    <i class="fas fa-database"></i> Code
+                </a>
+                <!-- Add more links with icons as needed -->
+            </div>
+        </div>
+</body></html>

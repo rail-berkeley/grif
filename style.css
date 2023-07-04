@@ -1,0 +1,188 @@
+body {
+    font-size: 17px;
+    color: #333333;
+    letter-spacing: 0.015em;
+    font-family: "Palatino Linotype";
+}
+
+body > div {
+    max-width: 70em;
+    padding-left: 4em;
+    padding-right: 4em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+hr {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+ul {
+    list-style-type: square;
+}
+
+.caption {
+    padding-left: 4em;
+    padding-right: 4em;
+}
+
+.stages img {
+    max-width: 100%
+}
+
+.video {
+    width: 100%;
+}
+
+.demos img {
+    max-width: 100%
+}
+
+.demos .col {
+    padding: 0em 1em 0em 1em;
+}
+
+.demos > .row:first-child {
+    padding-bottom: 1em;
+}
+
+.demos > .row > .col > img:first-child {
+    margin-bottom: 0.5em;
+    border-radius: 8px;
+}
+
+a {
+    color: #2c8df5;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+.custom-link {
+    color: #333333;
+}
+
+a:active,
+a:hover {
+    outline: 0
+}
+
+a.disabled:hover {
+    text-decoration: none;
+}
+
+li {
+    font-size: 17px;
+}
+
+.small-caps {
+    font-variant: small-caps;
+}
+
+.author-image {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.author-block {
+    margin: 0px 0px 0px 0px;
+    font-size: 15px;
+}
+
+.image-container {
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.image-constrained {
+    max-height: 100%;
+}
+
+.video-container {
+    position: relative;
+    max-height: 400px;
+    width: 100%;
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
+    overflow: hidden;
+}
+
+.video-fluid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.custom-container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.definition-box {
+    background-color: #f0f0f0;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.definition-box>p {
+    margin: 0;
+}
+
+.definition-box>span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.definition-box i {
+    margin-right: 10px;
+    color: #ffbb00;
+}
+
+.image-panel {
+    position: relative;
+    width: 160px;
+    height: 120px;
+}
+
+.img-fluid {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-text {
+    color: white;
+    font-size: 20px;
+}
+
+.image-panel:hover .overlay {
+    opacity: 1;
+}
+
